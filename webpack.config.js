@@ -15,7 +15,6 @@ module.exports = {
             require('autoprefixer'),
             purgecss({
               content: ['./**/*.html'],
-              // whitelistPatterns: [/^cdk-|mat-/]
             })
           ]
         }
