@@ -1,3 +1,5 @@
+const plugins = require('./src/tailwindcss.plugins')
+
 module.exports = {
   theme: {
     screens: {
@@ -34,5 +36,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: plugins,
 }
