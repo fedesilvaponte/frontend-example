@@ -4,11 +4,17 @@ const lightenDarkenColor = require('./utils/index');
 const skew = plugin(({addUtilities}) => {
   const newUtils = {
     '.skew-10deg': {
-      transform: 'skewY(-10deg)'
+      transform: 'skewY(-10deg)',
+      '&-reverse': {
+        transform: 'skewY(10deg)',
+      }
     },
-    '.skew-15deg': {
-      transform: 'skewY(-15deg)'
-    }
+    '.skew-5deg': {
+      transform: 'skewY(-5deg)',
+      '&-reverse': {
+        transform: 'skewY(5deg)',
+      }
+    },
   };
   return addUtilities(newUtils);
 });
