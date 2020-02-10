@@ -3,22 +3,53 @@
     <h1>Example</h1>
   </header>
 
-  <div class="px-4 py-4 flex-row content-between">
-    <app-alert-message type="error" message="Something wrong happened."></app-alert-message>
-    <br>
-    <app-alert-message type="warning" message="Guarda!"></app-alert-message>
-    <br>
-    <app-alert-message type="success" message="Everything is ok."></app-alert-message>
+  <div class="flex text-white items-center">
+    <div class="bg-uc-dark-blue p-4">
+      <p>uc-dark-blue</p>
+    </div>
+    <div class="bg-uc-blue p-4">
+      <p>uc-blue</p>
+    </div>
+    <div class="bg-uc-light-green hover:bg-uc-light-green-hover p-4">
+      <p>uc-light-green</p>
+    </div>
   </div>
 
-  <div class="grid grid-cols-3 gap-4">
+  <div class="p-4">
+    <div class="w-full bg-gray-100 h-4 rounded-full overflow-hidden">
+      <div class="bg-blue-500 w-12 h-4"></div>
+    </div>
+  </div>
+
+  <div class="px-4 py-4 flex-row content-between">
+    <app-alert-message
+      type="error"
+      message="Something wrong happened."
+    ></app-alert-message>
+
+    <br />
+    <app-alert-message type="warning" message="Guarda!"></app-alert-message>
+    <br />
+    <app-alert-message
+      type="success"
+      message="Everything is ok."
+    ></app-alert-message>
+  </div>
+
+  <div class="grid sm:grid-cols-3 gap-4">
     <app-card title="Some Title"> </app-card>
     <app-card title="Some Other Title"></app-card>
     <app-card title="A Different Title"></app-card>
   </div>
 
+  <div class="px-4 py-4">
+    <app-pagination></app-pagination>
+  </div>
+
   <div class="container">
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4">
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
+    >
       Button
     </button>
 
@@ -27,9 +58,13 @@
     </button>
   </div>
 
-  <br>
-  <form class="bg-white shadow-md rounded px-8 pt-8 pb-4 mb-4 ml-4 w-6/12 clearfix relative border-gray-700 border-solid">
-    <h2 class="absolute bg-blue-700 text-white px-8 py-2 -top-2 -left-1">Enter details</h2>
+  <br />
+  <form
+    class="bg-white shadow-md rounded px-8 pt-8 pb-4 mb-4 ml-4 w-6/12 clearfix relative border-gray-700 border-solid"
+  >
+    <h2 class="absolute bg-blue-700 text-white px-8 py-2 -top-2 -left-1">
+      Enter details
+    </h2>
     <div class="mb-4">
       <app-text-input></app-text-input>
     </div>
@@ -38,6 +73,23 @@
     </div>
     <button class="btn btn-blue right-0 float-right">Submit</button>
   </form>
+</div>
 
-
+<div class="p-4">
+  <table class="table-auto">
+    <thead>
+      <tr class="border-b">
+        <th class="px-4 py-2">#</th>
+        <th class="px-4 py-2">Title</th>
+        <th class="px-4 py-2">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos; index as i" class="border-b">
+        <td class="px-4 py-2">{{ i }}</td>
+        <td class="px-4 py-2">{{ todo.title }}</td>
+        <td class="px-4 py-2">{{ todo.completed }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
