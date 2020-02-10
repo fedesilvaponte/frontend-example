@@ -1,6 +1,6 @@
 # FrontendExample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Example of using Angular 9 and Tailwindcss with custom webpack config. 
 
 ## Development server
 
